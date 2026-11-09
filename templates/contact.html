@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+
+{% block title %}Request a Quote & Consultation | {{ company.name }}{% endblock %}
+
+{% block meta_description %}Request a custom cabinetry, finish carpentry, or installation quote from Kingdom Millwork (LIC# 1150491) in Costa Mesa, CA. Transparent pricing and white-glove service.{% endblock %}
+
+{% block content %}
+
+<!-- HERO / PAGE HEADER -->
+<section style="padding: 100px 0 50px; background: var(--bg-darkest); border-bottom: 1px solid rgba(212, 175, 55, 0.2); text-align: center;">
+  <div class="container">
+    <div class="section-eyebrow">Initiate Project</div>
+    <h1 class="section-title">Request a Consultation & Quote</h1>
+    <p class="section-desc" style="max-width: 760px; margin: 0 auto;">
+      Share your project scope, architectural blueprints, or design ideas. Our master carpenters will review your specifications and provide a preliminary feasibility review and estimate within 24 business hours.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT & FORM SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- LEFT: QUOTE REQUEST FORM -->
+      <div>
+        <div class="quote-form-card">
+          <div style="margin-bottom: 30px;">
+            <h2 style="font-family: var(--font-serif); font-size: 1.85rem; font-weight: 700; color: #FFF; margin-bottom: 8px;">
+              Project Specifications
+            </h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary);">
+              Please complete the form below. All inquiries receive direct attention from our senior estimating team.
+            </p>
+          </div>
+
+          <!-- SUCCESS CONFIRMATION BANNER (Revealed upon form submission) -->
+          <div id="formSuccessBanner" class="form-success-banner">
+            <div class="form-success-icon">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: #FFF; margin-bottom: 10px;">
+              Specifications Received
+            </h3>
+            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Thank you for considering Kingdom Millwork. Your project briefing has been assigned reference number:
+            </p>
+            <div style="display: inline-block; padding: 10px 24px; background: rgba(85, 224, 143, 0.15); border: 1px solid #55E08F; border-radius: var(--radius-sm); font-family: monospace; font-size: 1.35rem; font-weight: 700; color: #55E08F; margin-bottom: 24px;" id="quoteRefNumber">
+              KMW-78429
+            </div>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Senior Project Superintendent David Chen will review your details and reach out by phone or email within <strong>1 business day</strong> to schedule your initial consultation.
+            </p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.875rem; color: var(--text-muted);">
+              For urgent or expedited scheduling, call us directly at <a href="tel:{{ company.phone_raw }}" style="color: var(--gold-light); font-weight: 700;">{{ company.phone }}</a>.
+            </div>
+          </div>
+
+          <!-- THE INTERACTIVE FORM -->
+          <form id="kmwQuoteForm" novalidate>
+            <!-- Service Selector (Radio/Checkbox Style) -->
+            <div class="form-group">
+              <label class="form-label">Select Primary Discipline <span class="req">*</span></label>
+              <div class="service-selector-grid">
+                <div>
+                  <input type="radio" name="service_type" id="service_cabinets" value="Cabinets" class="service-selector-input" checked>
+                  <label for="service_cabinets" class="service-selector-label">Custom Cabinets</label>
+                </div>
+                <div>
+                  <input type="radio" name="service_type" id="service_carpentry" value="Finish Carpentry" class="service-selector-input">
+                  <label for="service_carpentry" class="service-selector-label">Finish Carpentry</label>
+                </div>
+                <div>
+                  <input type="radio" name="service_type" id="service_installation" value="Installation" class="service-selector-input">
+                  <label for="service_installation" class="service-selector-label">Installation</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Name Fields -->
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="firstName" class="form-label">First Name <span class="req">*</span></label>
+                <input type="text" id="firstName" name="first_name" class="form-control" placeholder="e.g. Jonathan" required>
+                <span class="form-error-msg">Please enter your first name.</span>
+              </div>
+              <div class="form-group">
+                <label for="lastName" class="form-label">Last Name <span class="req">*</span></label>
+                <input type="text" id="lastName" name="last_name" class="form-control" placeholder="e.g. Sterling" required>
+                <span class="form-error-msg">Please enter your last name.</span>
+              </div>
+            </div>
+
+            <!-- Contact Methods -->
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address <span class="req">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="name@residence.com" required>
+                <span class="form-error-msg">Please provide a valid email address.</span>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">US Phone Number <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(949) 555-0100" required>
+                <span class="form-error-msg">Please provide a 10-digit US phone number.</span>
+              </div>
+            </div>
+
+            <!-- Location & Timeline -->
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="projectCity" class="form-label">Project City / Zip Code <span class="req">*</span></label>
+                <input type="text" id="projectCity" name="city_zip" class="form-control" placeholder="e.g. Newport Beach, 92660" required>
+                <span class="form-error-msg">Please enter the job site city or zip.</span>
+              </div>
+              <div class="form-group">
+                <label for="timeline" class="form-label">Preferred Start Timeline</label>
+                <select id="timeline" name="timeline" class="form-control">
+                  <option value="immediate">Immediate (Ready to proceed)</option>
+                  <option value="1_month">Within 30 Days</option>
+                  <option value="1_3_months" selected>1 – 3 Months</option>
+                  <option value="3_plus_months">3+ Months (Planning phase)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Budget Range -->
+            <div class="form-group">
+              <label for="budgetRange" class="form-label">Estimated Investment Range</label>
+              <select id="budgetRange" name="budget_range" class="form-control">
+                <option value="10k_25k">$10,000 – $25,000 (Individual Room / Trim / Doors)</option>
+                <option value="25k_50k" selected>$25,000 – $50,000 (Kitchen / Bath / Built-In Library)</option>
+                <option value="50k_100k">$50,000 – $100,000 (Comprehensive Cabinetry & Millwork)</option>
+                <option value="100k_plus">$100,000+ (Full Estate Architectural Commission)</option>
+              </select>
+            </div>
+
+            <!-- Project Scope / Description -->
+            <div class="form-group">
+              <label for="projectDetails" class="form-label">Project Details & Vision <span class="req">*</span></label>
+              <textarea id="projectDetails" name="details" class="form-control" rows="4" placeholder="Tell us about your architectural goals, desired wood species (White Oak, Walnut, etc.), room dimensions, or specific design features..." required></textarea>
+              <span class="form-error-msg">Please provide a brief description of your project.</span>
+            </div>
+
+            <!-- Simulated Blueprint / Photo Dropzone -->
+            <div class="form-group">
+              <label class="form-label">Attach Blueprints or Inspiration Photos (Optional)</label>
+              <div class="file-dropzone" onclick="document.getElementById('fileInputSim').click();">
+                <input type="file" id="fileInputSim" style="display:none;" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" style="margin: 0 auto 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <div style="font-weight: 600; color: #FFF; font-size: 0.9rem;">Click or drag architectural plans here</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Supports PDF, DWG, PNG, JPEG up to 50MB</div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-lg submit-btn" style="width: 100%; margin-top: 10px;">
+              <span>Transmit Project Specifications</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 14px;">
+              🔒 Your information is confidential and will never be shared with third parties.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- RIGHT: CONTACT INFO PANEL & STYLED MAP -->
+      <div class="contact-info-panel">
+
+        <!-- Info Card 1: Direct Contact -->
+        <div class="info-card">
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: #FFF; margin-bottom: 20px;">
+            Workshop & Showroom
+          </h3>
+
+          <div class="info-row">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-light); font-weight: 600;">Main Facility</div>
+              <div style="font-size: 1rem; color: #FFF; font-weight: 600; margin-top: 2px;">{{ company.address_street }}</div>
+              <div style="font-size: 0.875rem; color: var(--text-secondary);">{{ company.address_city }}, {{ company.address_state }} {{ company.address_zip }}</div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-light); font-weight: 600;">Direct Phone</div>
+              <a href="tel:{{ company.phone_raw }}" style="font-size: 1.15rem; color: #FFF; font-weight: 700; display: block; margin-top: 2px;">{{ company.phone }}</a>
+              <div style="font-size: 0.8125rem; color: var(--text-muted);">Direct line to estimating desk</div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-light); font-weight: 600;">Email Inquiries</div>
+              <a href="mailto:{{ company.email }}" style="font-size: 0.95rem; color: #FFF; font-weight: 500; display: block; margin-top: 2px;">{{ company.email }}</a>
+              <div style="font-size: 0.8125rem; color: var(--text-muted);">Plan submissions & RFPs</div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-light); font-weight: 600;">Operating Hours</div>
+              <div style="font-size: 0.875rem; color: #FFF; margin-top: 2px;">{{ company.hours_weekday }}</div>
+              <div style="font-size: 0.8125rem; color: var(--text-secondary);">{{ company.hours_weekend }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STYLED MAP & SERVICE RADIUS PLACEHOLDER -->
+        <div class="info-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h4 style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: #FFF;">
+              Field Service Radius
+            </h4>
+            <span style="font-size: 0.75rem; color: var(--gold-light); font-weight: 700; background: rgba(212,175,55,0.1); padding: 4px 10px; border-radius: var(--radius-sm); border: 1px solid var(--gold-border);">
+              Southern California
+            </span>
+          </div>
+
+          <!-- Stylized Map Component -->
+          <div style="position: relative; height: 260px; background: #08080C; border: 1px solid var(--gold-border); border-radius: var(--radius-sm); overflow: hidden; display: flex; align-items: center; justify-content: center;">
+            <svg width="100%" height="100%" viewBox="0 0 350 260" preserveAspectRatio="none" style="opacity: 0.25;">
+              <defs>
+                <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <!-- Grid lines -->
+              <line x1="0" y1="65" x2="350" y2="65" stroke="#D4AF37" stroke-width="0.5"/>
+              <line x1="0" y1="130" x2="350" y2="130" stroke="#D4AF37" stroke-width="0.5"/>
+              <line x1="0" y1="195" x2="350" y2="195" stroke="#D4AF37" stroke-width="0.5"/>
+              <line x1="90" y1="0" x2="90" y2="260" stroke="#D4AF37" stroke-width="0.5"/>
+              <line x1="180" y1="0" x2="180" y2="260" stroke="#D4AF37" stroke-width="0.5"/>
+              <line x1="270" y1="0" x2="270" y2="260" stroke="#D4AF37" stroke-width="0.5"/>
+              <!-- Coastline abstraction -->
+              <path d="M 40 0 Q 150 140 320 260" fill="none" stroke="#F6D763" stroke-width="2"/>
+              <!-- Service Radius Circle -->
+              <circle cx="175" cy="130" r="85" fill="url(#mapGlow)" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="6,4"/>
+            </svg>
+
+            <!-- Center Pin -->
+            <div style="position: absolute; text-align: center; z-index: 2;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--gold-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; box-shadow: var(--gold-glow);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div style="font-size: 0.875rem; font-weight: 700; color: #FFF;">Costa Mesa Showroom</div>
+              <div style="font-size: 0.75rem; color: var(--gold-light);">Orange & LA Counties</div>
+            </div>
+          </div>
+
+          <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-top: 14px; line-height: 1.5;">
+            Our project teams mobilize daily to job sites in Newport Beach, Laguna Beach, Irvine, Corona del Mar, Beverly Hills, and surrounding communities.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

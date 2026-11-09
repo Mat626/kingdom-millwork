@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block title %}About Our Heritage & Master Craftsmen | {{ company.name }}{% endblock %}
+
+{% block meta_description %}Learn about Kingdom Millwork's 25-year heritage of master finish carpentry, custom cabinetry, and precision joinery in Southern California. LIC# 1150491.{% endblock %}
+
+{% block content %}
+
+<!-- HERO / PAGE HEADER -->
+<section style="padding: 100px 0 60px; background: var(--bg-darkest); border-bottom: 1px solid rgba(212, 175, 55, 0.2); text-align: center;">
+  <div class="container">
+    <div class="section-eyebrow">Our Heritage</div>
+    <h1 class="section-title">The Standard of Fine Woodworking</h1>
+    <p class="section-desc" style="max-width: 780px; margin: 0 auto;">
+      Founded on the bedrock of old-world European guild joinery and modernized through precision American engineering, {{ company.name }} builds architectural millwork that endures for generations.
+    </p>
+  </div>
+</section>
+
+<!-- STORY SECTION WITH WORKSHOP IMAGE -->
+<section style="padding: 90px 0; background: var(--bg-dark);">
+  <div class="container">
+    <div class="about-story-grid">
+      <div>
+        <div class="section-eyebrow no-after">The Beginning</div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; color: #FFF; margin-bottom: 22px;">
+          Twenty-Five Years of Relentless Craftsmanship
+        </h2>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 20px;">
+          Kingdom Millwork began in 1999 as a specialized bench-joinery shop in Costa Mesa. Founder Marcus Vance recognized that the construction industry had largely abandoned authentic woodworking principles in favor of mass-produced, flat-pack cabinetry and hollow trim.
+        </p>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 24px;">
+          He set out to restore true guild mastery: hand-selecting kiln-dried North American hardwoods, milling custom blade profiles in-house, and refusing to allow any synthetic filler or inferior substrate into the workshop.
+        </p>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 30px;">
+          Today, under California State Contractor License <strong>LIC# 1150491</strong>, Kingdom Millwork operates a state-of-the-art 12,000 sq. ft. fabrication facility and finish shop, partnering with top architects, interior designers, and homeowners across coastal Southern California.
+        </p>
+
+        <div style="flex; gap: 32px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex;">
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--gold-light);">1999</div>
+            <div style="font-size: 0.8125rem; text-transform: uppercase; color: var(--text-muted);">Year Established</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--gold-light);">1,250+</div>
+            <div style="font-size: 0.8125rem; text-transform: uppercase; color: var(--text-muted);">Commissions Delivered</div>
+          </div>
+          <div>
+            <div style="font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--gold-light);">100%</div>
+            <div style="font-size: 0.8125rem; text-transform: uppercase; color: var(--text-muted);">In-House Fabrication</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-img-box">
+        <img src="{{ url_for('static', filename='images/about-workshop.jpg') }}" alt="Kingdom Millwork Artisan Woodworking Workshop" style="width: 100%; height: 540px; object-fit: cover;">
+        <div class="about-img-badge">
+          <div style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--gold-light);">Costa Mesa Facility</div>
+          <div style="font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #FFF;">Temperature & Humidity Controlled</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES SECTION -->
+<section style="padding: 90px 0; background: var(--bg-surface);">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-eyebrow">Our Ethos</div>
+      <h2 class="section-title">The Four Pillars of Mastery</h2>
+      <p class="section-desc">
+        These tenets govern every drawing, cut, finish coat, and screw turned by our craftsmen.
+      </p>
+    </div>
+
+    <div class="about-values-grid">
+      <!-- Value 1 -->
+      <div class="value-card">
+        <div class="value-number">01</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #FFF; margin-bottom: 10px;">Mastery</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          Continuous dedication to guild woodworking techniques. We invest in ongoing master-craftsman apprenticeships and state-of-the-art German milling machinery.
+        </p>
+      </div>
+
+      <!-- Value 2 -->
+      <div class="value-card">
+        <div class="value-number">02</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #FFF; margin-bottom: 10px;">Integrity</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          Transparent pricing with zero hidden surcharges, detailed milestone schedules, and full accountability from project kickoff to final walkthrough.
+        </p>
+      </div>
+
+      <!-- Value 3 -->
+      <div class="value-card">
+        <div class="value-number">03</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #FFF; margin-bottom: 10px;">Precision</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          Tolerance standards tighter than 1/32". If a reveal is uneven or a miter isn't airtight, we rebuild it — no compromises, no cover-ups.
+        </p>
+      </div>
+
+      <!-- Value 4 -->
+      <div class="value-card">
+        <div class="value-number">04</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; color: #FFF; margin-bottom: 10px;">Respect</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          White-glove respect for your residence. Heavy floor protection, HEPA dust containment, clean job sites, and respectful, quiet professionals in your home.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section id="craftsmen" style="padding: 90px 0; background: var(--bg-dark);">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-eyebrow">Leadership</div>
+      <h2 class="section-title">Meet the Master Craftsmen</h2>
+      <p class="section-desc">
+        The seasoned minds and hands directly responsible for your architectural commissions.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Member 1: Marcus Vance -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="{{ url_for('static', filename='images/team-marcus.jpg') }}" alt="Marcus Vance, Founder and Lead Master Carpenter" class="team-img">
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Marcus Vance</h3>
+          <div class="team-role">Founder & Lead Master Carpenter</div>
+          <p class="team-bio">
+            With 25+ years of bespoke bench-joinery and finish carpentry experience, Marcus oversees all structural joinery protocols, lumber grading, and architectural detail approvals for Kingdom Millwork.
+          </p>
+        </div>
+      </div>
+
+      <!-- Member 2: Elena Rostova -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="{{ url_for('static', filename='images/team-elena.jpg') }}" alt="Elena Rostova, Senior Architectural Millwork Designer" class="team-img">
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">Elena Rostova</h3>
+          <div class="team-role">Senior Millwork Designer</div>
+          <p class="team-bio">
+            Trained in architectural design at Rhode Island School of Design, Elena translates design blueprints into 3D shop drawings, custom profiles, and hardware specifications tailored to luxury coastal residences.
+          </p>
+        </div>
+      </div>
+
+      <!-- Member 3: David Chen -->
+      <div class="team-card">
+        <div class="team-img-wrap">
+          <img src="{{ url_for('static', filename='images/team-david.jpg') }}" alt="David Chen, Senior Project Superintendent" class="team-img">
+        </div>
+        <div class="team-info">
+          <h3 class="team-name">David Chen</h3>
+          <div class="team-role">Senior Project Superintendent</div>
+          <p class="team-bio">
+            An 18-year construction veteran, David directs all on-site field installations, dust mitigation protocols, safety compliance, and manages the 40-point punch list walkthroughs with homeowners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LICENSING, CERTIFICATIONS & CREDENTIALS -->
+<section class="certifications-section">
+  <div class="container">
+    <div class="section-header text-center" style="margin-bottom: 36px;">
+      <div class="section-eyebrow">Verified Credentials</div>
+      <h2 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: #FFF;">
+        Licensed, Bonded & Insured Protection
+      </h2>
+    </div>
+
+    <div class="cert-grid">
+      <!-- Cert 1 -->
+      <div class="cert-card">
+        <div class="cert-title">CSLB License #1150491</div>
+        <div class="cert-meta">Class C-6 Cabinet & Millwork • Class B General</div>
+      </div>
+
+      <!-- Cert 2 -->
+      <div class="cert-card">
+        <div class="cert-title">$2M General Liability</div>
+        <div class="cert-meta">Commercial General & Excess Umbrella Policy</div>
+      </div>
+
+      <!-- Cert 3 -->
+      <div class="cert-card">
+        <div class="cert-title">Workers' Comp & Bond</div>
+        <div class="cert-meta">100% Active State Surety Bond & Crew Protection</div>
+      </div>
+
+      <!-- Cert 4 -->
+      <div class="cert-card">
+        <div class="cert-title">Guild Standards</div>
+        <div class="cert-meta">AWI Architectural Woodwork Institute Compliant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION BANNER -->
+<section class="cta-banner-section">
+  <div class="container cta-banner-inner">
+    <div class="section-eyebrow">Start the Conversation</div>
+    <h2 class="cta-banner-title">Experience the Kingdom Millwork Difference</h2>
+    <p class="cta-banner-desc">
+      Contact our Costa Mesa workshop today to arrange a consultation or tour our showroom facility.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+      <span>Get in Touch with Our Team</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+{% endblock %}
