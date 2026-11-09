@@ -4,6 +4,20 @@ A complete, premium, multi-section website for **Kingdom Millwork** (California 
 
 ---
 
+## 🌐 Live Website (GitHub Pages)
+
+The website is fully exported to standalone static HTML/CSS/JS and ready to be viewed directly online without installing anything:
+
+👉 **Live URL**: [https://mat626.github.io/kingdom-millwork/](https://mat626.github.io/kingdom-millwork/)
+
+### One-Click Activation on GitHub:
+1. Go to repository **Settings** &rarr; **Pages** (or visit [https://github.com/Mat626/kingdom-millwork/settings/pages](https://github.com/Mat626/kingdom-millwork/settings/pages))
+2. Under **Build and deployment** &gt; **Source**, choose **Deploy from a branch**
+3. Under **Branch**, select **`main`** and **`/ (root)`**, then click **Save**
+4. In about 60 seconds, your site will be live and viewable by anyone on desktop, tablet, and mobile!
+
+---
+
 ## Brand & Design Foundation
 
 - **Company Name**: Kingdom Millwork (KMW)
@@ -39,6 +53,7 @@ A complete, premium, multi-section website for **Kingdom Millwork** (California 
 ```
 construction/
 ├── app.py                      # Minimal Flask application serving all routes
+├── export_static.py            # Static site generator for GitHub Pages
 ├── requirements.txt            # Python dependencies (Flask >= 3.0.0)
 ├── README.md                   # Setup & documentation
 ├── templates/
