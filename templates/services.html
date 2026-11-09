@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+
+{% block title %}Architectural Millwork & Carpentry Services | {{ company.name }}{% endblock %}
+
+{% block meta_description %}Comprehensive architectural millwork, custom luxury cabinetry, and master installation services by Kingdom Millwork (LIC# 1150491) in Costa Mesa and Southern California.{% endblock %}
+
+{% block content %}
+
+<!-- HERO / PAGE HEADER -->
+<section style="padding: 100px 0 60px; background: var(--bg-darkest); border-bottom: 1px solid rgba(212, 175, 55, 0.2); text-align: center;">
+  <div class="container">
+    <div class="section-eyebrow">Master Disciplines</div>
+    <h1 class="section-title">Architectural Woodworking & Millwork Services</h1>
+    <p class="section-desc" style="max-width: 760px; margin: 0 auto;">
+      We bridge the divide between complex architectural blueprints and finished interior reality. Every piece is fabricated to heirloom standards and installed with microscopic precision.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICE 1: INSTALLATION -->
+<section id="installation" style="padding: 90px 0; background: var(--bg-dark);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center;">
+      <div>
+        <div class="section-eyebrow no-after">Discipline 01</div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; color: #FFF; margin-bottom: 20px;">
+          Master Installation Services
+        </h2>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px;">
+          Even the most expensive door or flooring will fail if installed improperly. Our certified installers ensure plumb, square, and level execution on every opening, protecting structural warranties and providing effortless, silent operation.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px;">
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Monumental Pivot & French Doors:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Installation of oversized exterior pivot doors with FritsJurgens concealed pivot systems, multipoint European locking, and custom weather-stripping.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Architectural Windows & Casements:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Flawless integration of steel, aluminum, and clad wood windows with custom sill extensions, waterproof membranes, and interior jamb wraps.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Wide-Plank Hardwood & Herringbone Flooring:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Subfloor acoustic leveling, moisture testing, precision herringbone layouts, and border inlays using European white oak and American walnut.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Architectural Fixtures & Concealed Hardware:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Installation of magnetic latch mortises, Tectus 3D concealed hinges, pocket door hardware, and custom designer pulls.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="{{ url_for('contact') }}?service=installation" class="btn btn-primary">
+          <span>Schedule Installation Quote</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--gold-border); box-shadow: var(--shadow-lg);">
+        <img src="{{ url_for('static', filename='images/service-installation.jpg') }}" alt="Master Door and Architectural Window Installation" style="width: 100%; height: 520px; object-fit: cover;">
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(10,10,14,0.9); border: 1px solid var(--gold-border); padding: 14px 20px; border-radius: var(--radius-sm); font-size: 0.8125rem; color: var(--gold-light);">
+          ★ All installations backed by our 10-Year Craftsmanship Guarantee & C-6 State License
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 2: FINISH CARPENTRY (Alternating Rhythm) -->
+<section id="finish-carpentry" style="padding: 90px 0; background: var(--bg-surface);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center;">
+      <div style="order: 2;">
+        <div class="section-eyebrow no-after">Discipline 02</div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; color: #FFF; margin-bottom: 20px;">
+          Architectural Finish Carpentry
+        </h2>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px;">
+          Finish carpentry is the soul of luxury interior architecture. It transforms plain drywall boxes into majestic, textured sanctuaries with timeless molding, ceiling grids, and bespoke millwork that draw the eye upward.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px;">
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Coffered & Vaulted Ceiling Beams:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Deep beam waffle coffered ceilings, tongue-and-groove white oak ceiling claddings, and integrated indirect LED cove channels.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Crown Molding & Multi-Stage Baseboards:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">3 to 5-piece built-up classical crown moldings, tall 7-1/4" baseboards with matching shoe molding, and plinth block architectural transitions.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Wainscoting & Architectural Wall Paneling:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Recessed panel wainscoting, contemporary board & batten, shiplap, and acoustic slatted fluted wood walls.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Built-in Library Shelving & Fireplace Mantels:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Custom library wall units with rolling brass ladders, media hearth built-ins, and bespoke hand-carved fireplace overmantels.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="{{ url_for('contact') }}?service=carpentry" class="btn btn-primary">
+          <span>Inquire About Finish Carpentry</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div style="order: 1; position: relative; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--gold-border); box-shadow: var(--shadow-lg);">
+        <img src="{{ url_for('static', filename='images/service-carpentry.jpg') }}" alt="Architectural Finish Carpentry, Coffered Ceilings and Wainscoting" style="width: 100%; height: 520px; object-fit: cover;">
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(10,10,14,0.9); border: 1px solid var(--gold-border); padding: 14px 20px; border-radius: var(--radius-sm); font-size: 0.8125rem; color: var(--gold-light);">
+          ★ Precision Miter Tolerance: < 1/64" with glued & biscuit-splined corner joints
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 3: CABINETS -->
+<section id="cabinets" style="padding: 90px 0; background: var(--bg-dark);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center;">
+      <div>
+        <div class="section-eyebrow no-after">Discipline 03</div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; color: #FFF; margin-bottom: 20px;">
+          Bespoke Architectural Cabinetry
+        </h2>
+        <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px;">
+          We build true custom cabinetry — not semi-custom filler boxes. Every cabinet carcass, drawer box, and face frame is engineered to exact architectural blueprints using 3/4" solid core plywood and solid hardwood dovetail joinery.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px;">
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Gourmet Kitchen Cabinetry:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Full inset or modern frameless euro styling, motorized touch-to-open trash mechanisms, appliance panel integration, and matching vent hoods.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Luxury Dressing Rooms & Closets:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Custom walk-in master wardrobes with integrated warm LED vertical channels, fluted glass aluminum framed doors, velvet jewelry safes, and center islands.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Primary Spa Bathroom Vanities:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Wall-hung floating double vanities with tambour fluted detailing, moisture-resistant catalyzed polyurethane sealers, and hidden plumbing clearances.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); color: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong style="color: #FFF;">Refacing & Factory Spray Re-Finishing:</strong>
+              <p style="font-size: 0.9rem; color: var(--text-secondary);">Premium refacing with new solid wood doors, heavy-duty soft-close hinges, and shop-applied conversion varnish for high-end updates.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="{{ url_for('contact') }}?service=cabinets" class="btn btn-primary">
+          <span>Request Custom Cabinetry Quote</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--gold-border); box-shadow: var(--shadow-lg);">
+        <img src="{{ url_for('static', filename='images/service-cabinets.jpg') }}" alt="Custom Luxury Cabinets and Dressing Room Wardrobes" style="width: 100%; height: 520px; object-fit: cover;">
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(10,10,14,0.9); border: 1px solid var(--gold-border); padding: 14px 20px; border-radius: var(--radius-sm); font-size: 0.8125rem; color: var(--gold-light);">
+          ★ Blum Legrabox & Movento Under-Mount Slides with Lifetime Guarantee
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS & FINISHES SHOWCASE -->
+<section class="materials-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-eyebrow">Material Selection</div>
+      <h2 class="section-title">Architectural-Grade Hardwoods & Finishes</h2>
+      <p class="section-desc">
+        We carefully source kiln-dried lumber from sustainable North American and European mills, hand-sorting every board for grain alignment, figure, and color harmony.
+      </p>
+    </div>
+
+    <div class="materials-grid">
+      <!-- Material 1 -->
+      <div class="material-card">
+        <div class="material-img-wrap">
+          <img src="{{ url_for('static', filename='images/material-white-oak.jpg') }}" alt="Rift Sawn White Oak Hardwood" class="material-img">
+        </div>
+        <div class="material-body">
+          <h4 class="material-title">Rift-Sawn White Oak</h4>
+          <div class="material-type">Select Hardwood • 1360 Janka</div>
+          <p class="material-desc">Linear, straight-grain figure with exceptional dimensional stability. The premier choice for contemporary coastal kitchens and floating vanities.</p>
+        </div>
+      </div>
+
+      <!-- Material 2 -->
+      <div class="material-card">
+        <div class="material-img-wrap">
+          <img src="{{ url_for('static', filename='images/material-walnut.jpg') }}" alt="American Black Walnut Hardwood" class="material-img">
+        </div>
+        <div class="material-body">
+          <h4 class="material-title">American Black Walnut</h4>
+          <div class="material-type">Premium Hardwood • 1010 Janka</div>
+          <p class="material-desc">Deep chocolate and espresso heartwood with warm golden undertones. Revered for luxury libraries, wine cellars, and executive desks.</p>
+        </div>
+      </div>
+
+      <!-- Material 3 -->
+      <div class="material-card">
+        <div class="material-img-wrap">
+          <img src="{{ url_for('static', filename='images/material-maple.jpg') }}" alt="Hard Sugar Maple Hardwood" class="material-img">
+        </div>
+        <div class="material-body">
+          <h4 class="material-title">Hard Sugar Maple</h4>
+          <div class="material-type">Ultra-Dense Hardwood • 1450 Janka</div>
+          <p class="material-desc">Dense, tight grain structure that provides the ultimate smooth foundation for glass-like catalyzed lacquer paint finishes and dovetail drawer boxes.</p>
+        </div>
+      </div>
+
+      <!-- Material 4 -->
+      <div class="material-card">
+        <div class="material-img-wrap">
+          <img src="{{ url_for('static', filename='images/material-brass.jpg') }}" alt="Satin Brushed Brass Hardware" class="material-img">
+        </div>
+        <div class="material-body">
+          <h4 class="material-title">Satin Brushed Brass</h4>
+          <div class="material-type">Solid Metal Hardware Finish</div>
+          <p class="material-desc">Solid forged brass with clear protective micro-coating. Provides warm golden reflections matching Kingdom Millwork signature detailing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION) -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-eyebrow">Client Inquiries</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">
+        Everything you need to know about our design process, timelines, materials, and warranty coverage.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      <!-- FAQ 1 -->
+      <div class="faq-item active">
+        <button class="faq-question" aria-expanded="true">
+          <span>What is the typical timeline for custom cabinetry or finish carpentry?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" style="max-height: 300px;">
+          Most custom cabinetry projects require 6 to 10 weeks from final approved shop drawings to completion. This includes precision shop fabrication, multi-coat spray finishing, curing, and delivery. On-site installation typically takes 3 to 7 business days depending on project scale. We provide an exact milestone schedule upfront so you can plan your remodel seamlessly.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do you build everything in-house or do you order pre-fabricated boxes?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Every custom cabinet and architectural millwork piece is built from scratch in our Costa Mesa, California facility. We do not use flat-pack imports or mass-produced modular boxes. We use 3/4" European or domestic plywood, solid hardwood face frames, and 5/8" solid maple dovetail drawers assembled by our own master joiners.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Are you licensed and insured in California?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes. Kingdom Millwork holds an active California Contractor License (LIC# 1150491) with Class C-6 Millwork & Finish Carpentry and Class B General Contractor classifications. We carry full $2,000,000 General Liability insurance, active Surety Bond, and comprehensive Workers' Compensation coverage for all crew members.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How do you handle dust containment and existing flooring protection?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We operate under strict "clean job site" protocols. Before a single tool enters your home, we protect pathways with heavy-duty breathable Ram Board, seal adjoining living areas with zippered plastic containment barriers, and run commercial HEPA air scrubbers. Our tools feature direct vacuum extraction, and we vacuum work areas daily.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>What is covered under your 10-Year Craftsmanship Warranty?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Our warranty covers structural integrity of cabinet carcasses, joinery integrity of face frames, door alignment, drawer slides, and hinges against defects or loosening. Because we use commercial-grade Blum hardware and premium joinery, our builds are engineered to last decades.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION BANNER -->
+<section class="cta-banner-section">
+  <div class="container cta-banner-inner">
+    <div class="section-eyebrow">Ready to Begin?</div>
+    <h2 class="cta-banner-title">Let's Discuss Your Architectural Vision</h2>
+    <p class="cta-banner-desc">
+      Submit your blueprints, inspiration photos, or schedule an on-site consultation with our master millwork team today.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+      <span>Request a Free Detailed Quote</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+{% endblock %}
