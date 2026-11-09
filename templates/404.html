@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found (404) | {{ company.name }}{% endblock %}
+
+{% block content %}
+<section class="error-page-section">
+  <div class="container">
+    <div class="section-eyebrow">Error 404</div>
+    <div class="error-code">404</div>
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: #FFF; margin: 18px 0;">
+      Page Beyond the Blueprint
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 580px; margin: 0 auto 36px; line-height: 1.7;">
+      The architectural drawing or page you requested does not exist or may have been relocated. Allow us to guide you back to our primary portfolio.
+    </p>
+
+    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+      <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span>Return to Homepage</span>
+      </a>
+      <a href="{{ url_for('portfolio') }}" class="btn btn-secondary btn-lg">
+        <span>Explore Portfolio</span>
+      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn-secondary btn-lg">
+        <span>Contact Estimating Desk</span>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

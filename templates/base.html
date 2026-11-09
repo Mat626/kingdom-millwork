@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>{% block title %}{{ company.name }} | Bespoke Cabinets, Installation & Finish Carpentry{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{{ company.name }} ({{ company.license }}) specializes in bespoke luxury cabinetry, architectural finish carpentry, and precision door & window installation across {{ company.address_city }} and Southern California.{% endblock %}">
+  <meta name="keywords" content="finish carpentry, custom cabinets, architectural millwork, crown molding, door installation, trim carpentry, kitchen cabinets, California contractor {{ company.license }}">
+  <meta name="author" content="{{ company.name }}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% block og_title %}{{ company.name }} | Architectural Millwork & Custom Cabinetry{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ company.tagline }} State Licensed {{ company.license }}. Serving luxury residences throughout Southern California.{% endblock %}">
+  <meta property="og:image" content="{{ url_for('static', filename='images/hero-luxury-kitchen.jpg') }}">
+  <meta property="og:site_name" content="{{ company.name }}">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twitter_title %}{{ company.name }} | Architectural Millwork & Cabinetry{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}{{ company.tagline }}{% endblock %}">
+  <meta name="twitter:image" content="{{ url_for('static', filename='images/hero-luxury-kitchen.jpg') }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+  <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- LocalBusiness Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "{{ company.name }}",
+    "alternateName": "{{ company.monogram }}",
+    "image": "{{ url_for('static', filename='images/hero-luxury-kitchen.jpg', _external=True) }}",
+    "logo": "{{ url_for('static', filename='images/logo-transparent.png', _external=True) }}",
+    "telephone": "{{ company.phone }}",
+    "email": "{{ company.email }}",
+    "priceRange": "$$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ company.address_street }}",
+      "addressLocality": "{{ company.address_city }}",
+      "addressRegion": "{{ company.address_state }}",
+      "postalCode": "{{ company.address_zip }}",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.6411,
+      "longitude": -117.9187
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "17:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "08:00",
+        "closes": "14:00"
+      }
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "license",
+      "name": "{{ company.license_type }}",
+      "recognizedBy": {
+        "@type": "AdministrativeArea",
+        "name": "California Contractors State License Board"
+      }
+    },
+    "areaServed": [
+      {% for area in company.service_areas %}
+      "{{ area }}"{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+
+  <!-- Top Notification / Credentials Bar -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-left">
+        <span class="topbar-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          {{ company.license }}
+        </span>
+        <span style="color: rgba(255,255,255,0.2);">|</span>
+        <span>Licensed & Insured Millwork Specialists</span>
+      </div>
+      <div class="topbar-right">
+        <span class="topbar-hours">{{ company.hours_weekday }}</span>
+        <span style="color: rgba(255,255,255,0.2);">|</span>
+        <a href="tel:{{ company.phone_raw }}" class="topbar-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Direct: <strong style="color: var(--gold-light);">{{ company.phone }}</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Luxury Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="{{ url_for('index') }}" class="logo-brand" aria-label="{{ company.name }} Home">
+        <img src="{{ url_for('static', filename='images/logo-transparent.png') }}" alt="{{ company.name }} Logo" class="logo-img">
+        <div class="logo-text-group">
+          <span class="logo-name">{{ company.name }}</span>
+          <span class="logo-sub">{{ company.license }} • FINE WOODWORKING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="{{ url_for('index') }}" class="nav-link {% if active_page == 'home' %}active{% endif %}">Home</a>
+        <a href="{{ url_for('services') }}" class="nav-link {% if active_page == 'services' %}active{% endif %}">Services</a>
+        <a href="{{ url_for('portfolio') }}" class="nav-link {% if active_page == 'portfolio' %}active{% endif %}">Portfolio</a>
+        <a href="{{ url_for('about') }}" class="nav-link {% if active_page == 'about' %}active{% endif %}">About Us</a>
+        <a href="{{ url_for('contact') }}" class="nav-link {% if active_page == 'contact' %}active{% endif %}">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="{{ url_for('contact') }}" class="btn btn-primary btn-sm header-cta-btn">
+          <span>Get a Free Quote</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+
+        <!-- Hamburger Button for Mobile -->
+        <button class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-in Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px;">
+        <img src="{{ url_for('static', filename='images/logo-transparent.png') }}" alt="{{ company.name }}" style="height: 48px; width: auto;">
+        <div>
+          <div style="font-family: var(--font-serif); font-weight: 700; color: #FFF; font-size: 1.15rem;">{{ company.name }}</div>
+          <div style="color: var(--gold-light); font-size: 0.75rem; letter-spacing: 0.08em;">{{ company.license }}</div>
+        </div>
+      </div>
+
+      <nav class="mobile-nav-list">
+        <a href="{{ url_for('index') }}" class="mobile-nav-link {% if active_page == 'home' %}active{% endif %}">
+          <span>Home</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="{{ url_for('services') }}" class="mobile-nav-link {% if active_page == 'services' %}active{% endif %}">
+          <span>Services</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="{{ url_for('portfolio') }}" class="mobile-nav-link {% if active_page == 'portfolio' %}active{% endif %}">
+          <span>Portfolio</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="{{ url_for('about') }}" class="mobile-nav-link {% if active_page == 'about' %}active{% endif %}">
+          <span>About Us</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="{{ url_for('contact') }}" class="mobile-nav-link {% if active_page == 'contact' %}active{% endif %}">
+          <span>Contact & Quote</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </nav>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <a href="tel:{{ company.phone_raw }}" class="btn btn-secondary" style="width: 100%;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Call: {{ company.phone }}</span>
+      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary" style="width: 100%;">
+        <span>Request Free Quote</span>
+      </a>
+      <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
+        {{ company.license_type }}
+      </div>
+    </div>
+  </aside>
+
+  <!-- Page Content Injection -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Credentials -->
+        <div>
+          <a href="{{ url_for('index') }}" class="logo-brand" style="margin-bottom: 18px;">
+            <img src="{{ url_for('static', filename='images/logo-transparent.png') }}" alt="{{ company.name }}" style="height: 54px; width: auto;">
+          </a>
+          <p class="footer-about-text">
+            Premier Southern California master carpenters specializing in architectural millwork, bespoke cabinetry, and luxury finish carpentry for residential and commercial estates.
+          </p>
+          <div class="footer-license-box">
+            {{ company.license }} • FULLY LICENSED & INSURED
+          </div>
+          <div style="margin-top: 16px; font-size: 0.8125rem; color: var(--text-muted);">
+            Bonded & Workers' Comp Insured • A+ Better Business Bureau
+          </div>
+        </div>
+
+        <!-- Col 2: Services -->
+        <div>
+          <h4 class="footer-col-title">Our Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="{{ url_for('services') }}#cabinets" class="footer-link">Custom Kitchen Cabinetry</a></li>
+            <li><a href="{{ url_for('services') }}#finish-carpentry" class="footer-link">Architectural Finish Carpentry</a></li>
+            <li><a href="{{ url_for('services') }}#installation" class="footer-link">Doors & Windows Installation</a></li>
+            <li><a href="{{ url_for('services') }}#finish-carpentry" class="footer-link">Crown Molding & Ceilings</a></li>
+            <li><a href="{{ url_for('services') }}#cabinets" class="footer-link">Luxury Dressing Closets</a></li>
+            <li><a href="{{ url_for('services') }}#installation" class="footer-link">Custom Staircases & Railings</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Navigation -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="{{ url_for('index') }}" class="footer-link">Home</a></li>
+            <li><a href="{{ url_for('services') }}" class="footer-link">All Services</a></li>
+            <li><a href="{{ url_for('portfolio') }}" class="footer-link">Portfolio & Gallery</a></li>
+            <li><a href="{{ url_for('about') }}" class="footer-link">About Our Craft</a></li>
+            <li><a href="{{ url_for('about') }}#craftsmen" class="footer-link">Master Craftsmen</a></li>
+            <li><a href="{{ url_for('contact') }}" class="footer-link">Request a Free Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Showroom -->
+        <div>
+          <h4 class="footer-col-title">Workshop & Showroom</h4>
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.9375rem; color: var(--text-secondary);">
+            <div style="display: flex; gap: 10px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" style="flex-shrink: 0; margin-top: 3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>{{ company.full_address }}</span>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" style="flex-shrink: 0; margin-top: 3px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:{{ company.phone_raw }}" style="color: #FFF; font-weight: 600;">{{ company.phone }}</a>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" style="flex-shrink: 0; margin-top: 3px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:{{ company.email }}" style="color: var(--text-secondary);">{{ company.email }}</a>
+            </div>
+          </div>
+
+          <div class="footer-social-row">
+            <a href="{{ company.social.instagram }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="{{ company.social.facebook }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="{{ company.social.houzz }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Houzz">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </a>
+            <a href="{{ company.social.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; {{ now_year or '2026' }} {{ company.name }} ({{ company.license }}). All rights reserved. Precision craftsmanship since 1999.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <span>California C-6 Millwork License</span>
+          <span>•</span>
+          <span>Class B General Contractor</span>
+          <span>•</span>
+          <span style="color: var(--gold-light);">US Domestic Quality</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal Global Shell (for Portfolio cards) -->
+  <div class="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" aria-label="Close lightbox">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="" class="lightbox-img">
+      </div>
+      <div class="lightbox-details">
+        <div>
+          <span class="lightbox-cat" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-light); font-weight: 700;">Category</span>
+          <h3 class="lightbox-title" style="font-family: var(--font-serif); font-size: 1.8rem; color: #FFF; margin: 8px 0 14px;">Project Title</h3>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 20px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="lightbox-loc">Location</span>
+          </div>
+          <p class="lightbox-desc" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 24px;">Project overview description.</p>
+          <div style="background: rgba(255,255,255,0.04); border-left: 2px solid var(--gold-primary); padding: 12px 16px;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold-light); font-weight: 700; margin-bottom: 4px;">Materials & Execution</div>
+            <div class="lightbox-mat" style="font-size: 0.875rem; color: #EEE;">White Oak, Lacquer, Brass</div>
+          </div>
+        </div>
+        <div style="margin-top: 30px;">
+          <a href="{{ url_for('contact') }}" class="btn btn-primary btn-sm" style="width: 100%;">
+            <span>Inquire About Similar Build</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Floating Sticky CTA Bar -->
+  <div class="mobile-sticky-cta">
+    <div class="mobile-sticky-grid">
+      <a href="tel:{{ company.phone_raw }}" class="btn btn-secondary btn-sm" style="font-size: 0.8125rem; padding: 10px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Call Now</span>
+      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary btn-sm" style="font-size: 0.8125rem; padding: 10px;">
+        <span>Free Quote</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block scripts_extra %}{% endblock %}
+</body>
+</html>
