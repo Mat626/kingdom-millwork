@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}Master Portfolio & Gallery | {{ company.name }}{% endblock %}
+
+{% block meta_description %}Explore custom luxury kitchens, architectural finish carpentry, floating staircases, and bespoke built-ins handcrafted by Kingdom Millwork (LIC# 1150491).{% endblock %}
+
+{% block content %}
+
+<!-- HERO / PAGE HEADER -->
+<section style="padding: 100px 0 50px; background: var(--bg-darkest); border-bottom: 1px solid rgba(212, 175, 55, 0.2); text-align: center;">
+  <div class="container">
+    <div class="section-eyebrow">Curated Works</div>
+    <h1 class="section-title">Master Carpentry & Millwork Portfolio</h1>
+    <p class="section-desc" style="max-width: 780px; margin: 0 auto 36px;">
+      A showcase of bespoke architectural installations, custom luxury cabinetry, and finish millwork completed across premier residences in Southern California.
+    </p>
+
+    <!-- FILTER BUTTONS -->
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="cabinets">Cabinets</button>
+      <button class="filter-btn" data-filter="finish-carpentry">Finish Carpentry</button>
+      <button class="filter-btn" data-filter="installation">Installation</button>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO GRID -->
+<section style="padding: 80px 0 100px; background: var(--bg-dark);">
+  <div class="container">
+    <div class="portfolio-grid">
+
+      <!-- Item 1: Modern Luxury Kitchen -->
+      <div class="portfolio-card"
+           data-category="cabinets"
+           data-category-label="Custom Cabinets"
+           data-title="Newport Coast Contemporary Kitchen"
+           data-location="Newport Coast, CA"
+           data-materials="Solid Rift-Sawn White Oak, Matte Charcoal Lacquer, Calacatta Marble"
+           data-desc="Complete custom cabinetry with integrated Sub-Zero refrigeration, fluted white oak upper panels, motorized spice pullouts, and brushed satin brass bar pulls.">
+        <img src="{{ url_for('static', filename='images/hero-luxury-kitchen.jpg') }}" alt="Newport Coast Contemporary Kitchen" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Cabinets</span>
+          <h3 class="portfolio-card-title">Newport Coast Contemporary Kitchen</h3>
+          <span class="portfolio-card-location">Newport Coast, CA</span>
+        </div>
+      </div>
+
+      <!-- Item 2: Floor-to-Ceiling Library -->
+      <div class="portfolio-card"
+           data-category="finish-carpentry"
+           data-category-label="Finish Carpentry"
+           data-title="Laguna Beach Floor-to-Ceiling Library"
+           data-location="Laguna Beach, CA"
+           data-materials="American Black Walnut, Hand-Turned Brass Ladder, Concealed LED Niches"
+           data-desc="Floor-to-ceiling custom dark American walnut library bookcases with integrated warm LED accent lighting, display niches with sculptures, integrated rolling brass library ladder, and velvet sitting lounge.">
+        <img src="{{ url_for('static', filename='images/project-library.jpg') }}" alt="Laguna Beach Floor-to-Ceiling Library" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Finish Carpentry</span>
+          <h3 class="portfolio-card-title">Laguna Beach Master Library</h3>
+          <span class="portfolio-card-location">Laguna Beach, CA</span>
+        </div>
+      </div>
+
+      <!-- Item 3: Cantilevered Floating Stairs -->
+      <div class="portfolio-card"
+           data-category="installation"
+           data-category-label="Installation"
+           data-title="Corona del Mar Cantilevered Floating Stairs"
+           data-location="Corona del Mar, CA"
+           data-materials="4-Inch Solid White Oak Treads, Concealed Structural Steel, 1/2-Inch Low-Iron Glass"
+           data-desc="High-end custom residential staircase featuring thick solid European white oak floating open treads, concealed structural steel brackets, seamless minimalist glass panel railing with brushed brass top cap, and warm step-lighting.">
+        <img src="{{ url_for('static', filename='images/project-staircase.jpg') }}" alt="Corona del Mar Cantilevered Floating Stairs" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Installation</span>
+          <h3 class="portfolio-card-title">Cantilevered Floating Stairs</h3>
+          <span class="portfolio-card-location">Corona del Mar, CA</span>
+        </div>
+      </div>
+
+      <!-- Item 4: Primary Spa Vanity -->
+      <div class="portfolio-card"
+           data-category="cabinets"
+           data-category-label="Custom Cabinets"
+           data-title="Shady Canyon Primary Spa Vanity"
+           data-location="Shady Canyon, Irvine, CA"
+           data-materials="Fluted White Oak, Calacatta Marble, Wall-Mounted Brass Faucets"
+           data-desc="High-end primary bathroom with bespoke floating double vanity crafted from fluted natural white oak, Calacatta marble slab countertop with integrated vessel sinks, wall-mounted satin gold faucets, and backlit mirrors.">
+        <img src="{{ url_for('static', filename='images/project-vanity.jpg') }}" alt="Shady Canyon Primary Spa Vanity" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Cabinets</span>
+          <h3 class="portfolio-card-title">Shady Canyon Spa Vanity</h3>
+          <span class="portfolio-card-location">Irvine, CA</span>
+        </div>
+      </div>
+
+      <!-- Item 5: Coffered Ceiling Living Room -->
+      <div class="portfolio-card"
+           data-category="finish-carpentry"
+           data-category-label="Finish Carpentry"
+           data-title="Pelican Hill Coffered Ceiling & Hearth"
+           data-location="Newport Beach, CA"
+           data-materials="Select Poplar Millwork, Multi-Piece Crown, Hand-Carved Limestone Mantel"
+           data-desc="An Architectural Digest-style luxury living room highlighting master finish carpentry with a multi-layered illuminated coffered ceiling, floor-to-ceiling recessed wainscot paneling, and a handcrafted fireplace mantel.">
+        <img src="{{ url_for('static', filename='images/service-carpentry.jpg') }}" alt="Pelican Hill Coffered Ceiling & Hearth" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Finish Carpentry</span>
+          <h3 class="portfolio-card-title">Coffered Ceiling & Hearth</h3>
+          <span class="portfolio-card-location">Newport Beach, CA</span>
+        </div>
+      </div>
+
+      <!-- Item 6: Monumental Pivot Entry -->
+      <div class="portfolio-card"
+           data-category="installation"
+           data-category-label="Installation"
+           data-title="Dana Point 10-Foot Pivot Entry"
+           data-location="Dana Point, CA"
+           data-materials="Rift-Sawn White Oak, FritsJurgens Pivot System, Satin Brass Grip"
+           data-desc="Massive oversized 10-foot tall pivot front door made of solid horizontal slat rift-cut white oak and bronze-tinted glass inserts, long vertical brushed brass pull handle, and polished limestone entry foyer.">
+        <img src="{{ url_for('static', filename='images/project-entryway.jpg') }}" alt="Monumental Pivot Entry Door" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Installation</span>
+          <h3 class="portfolio-card-title">Monumental Pivot Entry Door</h3>
+          <span class="portfolio-card-location">Dana Point, CA</span>
+        </div>
+      </div>
+
+      <!-- Item 7: Luxury Dressing Room -->
+      <div class="portfolio-card"
+           data-category="cabinets"
+           data-category-label="Custom Cabinets"
+           data-title="Bel-Air Boutique Master Dressing Room"
+           data-location="Bel-Air, Los Angeles, CA"
+           data-materials="Smoked Oak, Fluted Glass Doors, Integrated Warm LED, Brass Hardware"
+           data-desc="An ultra-luxurious bespoke walk-in dressing room featuring dark smoked oak cabinetry, fluted glass doors, integrated warm LED shelf lighting, satin gold brass hardware, and a centerpiece glass-topped accessory island.">
+        <img src="{{ url_for('static', filename='images/service-cabinets.jpg') }}" alt="Bel-Air Boutique Master Dressing Room" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Cabinets</span>
+          <h3 class="portfolio-card-title">Boutique Master Dressing Room</h3>
+          <span class="portfolio-card-location">Bel-Air, CA</span>
+        </div>
+      </div>
+
+      <!-- Item 8: French Double Doors & Flooring -->
+      <div class="portfolio-card"
+           data-category="installation"
+           data-category-label="Installation"
+           data-title="Beverly Hills Grand French Door Suite"
+           data-location="Beverly Hills, CA"
+           data-materials="Solid Mahogany Core, Satin Brass Cremone Bolts, Herringbone White Oak"
+           data-desc="Newly installed French double doors with satin brass hardware, custom architectural casing and baseboards, and wide-plank European white oak herringbone flooring illuminated by warm natural sunlight.">
+        <img src="{{ url_for('static', filename='images/service-installation.jpg') }}" alt="Beverly Hills French Doors & Flooring" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Installation</span>
+          <h3 class="portfolio-card-title">Grand French Door Suite</h3>
+          <span class="portfolio-card-location">Beverly Hills, CA</span>
+        </div>
+      </div>
+
+      <!-- Item 9: Climate Wine Cellar -->
+      <div class="portfolio-card"
+           data-category="finish-carpentry"
+           data-category-label="Finish Carpentry"
+           data-title="Pasadena Climate-Controlled Wine Room"
+           data-location="Pasadena, CA"
+           data-materials="American Black Walnut, Frameless Glass Enclosure, LED Bottle Ribbons"
+           data-desc="High-end climate-controlled wine room in a luxury estate with floor-to-ceiling custom dark American walnut millwork racking, warm LED backlight illuminating individual bottles, frameless glass enclosure, and brass hardware.">
+        <img src="{{ url_for('static', filename='images/project-wine-cellar.jpg') }}" alt="Pasadena Wine Cellar Millwork" class="portfolio-card-img" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-category">Finish Carpentry</span>
+          <h3 class="portfolio-card-title">Custom Glass & Walnut Wine Cellar</h3>
+          <span class="portfolio-card-location">Pasadena, CA</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Notice / Note -->
+    <div style="margin-top: 60px; text-align: center; color: var(--text-muted); font-size: 0.875rem;">
+      Click any project card to inspect high-resolution photography, materials specification, and architectural details.
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION BANNER -->
+<section class="cta-banner-section">
+  <div class="container cta-banner-inner">
+    <div class="section-eyebrow">Have a Custom Project in Mind?</div>
+    <h2 class="cta-banner-title">Let Us Build Your Architectural Masterpiece</h2>
+    <p class="cta-banner-desc">
+      From initial concept sketches to white-glove installation, our artisans deliver perfection on every commission.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">
+      <span>Request a Consultation & Blueprint Review</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+{% endblock %}
